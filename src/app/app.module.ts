@@ -5,16 +5,24 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CatMotosComponent } from './cat-motos/cat-motos.component';
+import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
+import { ImagemComponent } from './imagem/imagem.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CatMotosComponent
+    CatMotosComponent,
+    HomeComponent,
+    MenuComponent,
+    ImagemComponent
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

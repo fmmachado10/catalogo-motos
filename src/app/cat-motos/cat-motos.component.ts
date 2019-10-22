@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Moto } from '../modelo/moto';
-import {CatMotosService} from "./cat-motos.service";
+import {Component, OnInit} from '@angular/core';
+import {Moto} from '../modelo/moto';
 
 @Component({
   selector: 'app-cat-motos',
@@ -23,7 +22,7 @@ export class CatMotosComponent implements OnInit {
       }
     );
 
-    //Utilizando o serviço para adicionar no Banco
+    //Utilizando o serviço para chamar a API e adicionar no Banco
     //var servicoMoto: CatMotosService = new CatMotosService();
 
 
