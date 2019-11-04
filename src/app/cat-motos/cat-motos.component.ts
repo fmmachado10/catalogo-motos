@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Moto} from '../modelo/moto';
+import {CatMotosService} from "./cat-motos.service";
 
 @Component({
   selector: 'app-cat-motos',
@@ -8,31 +9,27 @@ import {Moto} from '../modelo/moto';
 })
 export class CatMotosComponent implements OnInit {
 
-  listaMotos = [];
-  moto: Moto = new Moto();
-  cont = 0;
+  listaMotos: Moto[] = [];
+  moto: Moto = {id: 0, modelo: '', ano: '', cor: ''};
+  mensagem = '';
 
-  adicionar() {
-    this.listaMotos.push(
-      {
-        id: ++this.cont,
-        modelo: this.moto.modelo,
-        ano: this.moto.ano,
-        cor: this.moto.cor
-      }
-    );
-
-    //Utilizando o serviço para chamar a API e adicionar no Banco
-    //var servicoMoto: CatMotosService = new CatMotosService();
-
-
-
-
-  }
-
-  constructor() { }
+  constructor(private api: CatMotosService) { }
 
   ngOnInit() {
   }
+
+  consultar() {
+    this.api.consultar()
+      .toPromise()
+      .then
+      (res => {
+        this.listaMotos = res;
+      });
+  }
+
+
+
+
+
 
 }

@@ -1,14 +1,15 @@
 <div class="container">
 
-<h4 class="text-info">Catálogo de Motos</h4>
+  <h4 class="text-info">Catálogo de Motos</h4>
 
-<form>
+  <form>
+
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inModelo">Modelo</label>
         <input [(ngModel)]="moto.modelo" type="text" class="form-control" id="inModelo" name="inModelo">
       </div>
-        <div class="form-group col-md-3">
+      <div class="form-group col-md-3">
         <label for="inAno">Ano</label>
         <input [(ngModel)]="moto.ano" type="text" class="form-control" id="inAno" name="inAno">
       </div>
@@ -19,22 +20,22 @@
     </div>
 
     <div class="form-row">
-        <button type="button" class="btn btn-success" (click)="adicionar()">Adcionar</button>
+      <button type="button" class="btn btn-success" (click)="adicionar()">Adcionar</button>
     </div>
 
     <p></p>
     <div class="form-row">
-            <div class="col-6" *ngFor="let obj of listaMotos">
-                <div class="card">
-                    <div class="card-block">
-                       <h5 class="card-title">Id: {{obj.id}}</h5>
-                       <h6 class="card-title">Modelo: {{obj.modelo}}</h6>
-                       <h6 class="card-subtitle mb-2 text-muted">Modelo: {{obj.ano}}</h6>
-                       <h6 class="card-subtitle mb-2 text-muted">Modelo: {{obj.cor}}</h6>
-                    </div>
-              </div>
-            </div>
+      <div class="col-6" *ngFor="let obj of listaMotos">
+        <div class="card">
+          <div class="card-block">
+            <h5 class="card-title">Id: {{obj.id}}</h5>
+            <h6 class="card-title">Modelo: {{obj.modelo}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Modelo: {{obj.ano}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Modelo: {{obj.cor}}</h6>
+          </div>
         </div>
-</form>
+      </div>
+    </div>
+  </form>
 
 </div>
