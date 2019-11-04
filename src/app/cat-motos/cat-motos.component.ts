@@ -16,15 +16,22 @@ export class CatMotosComponent implements OnInit {
   constructor(private api: CatMotosService) { }
 
   ngOnInit() {
+    this.consultar();
   }
 
   consultar() {
+
+    console.log("vai chamar a api...")
+
     this.api.consultar()
       .toPromise()
       .then
       (res => {
         this.listaMotos = res;
       });
+
+    console.log("saindo da api...")
+
   }
 
 
