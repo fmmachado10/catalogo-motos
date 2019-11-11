@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Moto} from '../modelo/moto';
 import {CatMotosService} from "./cat-motos.service";
-import {MotoService} from "../moto.service";
 
 @Component({
   selector: 'app-cat-motos',

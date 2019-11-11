@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {CatMotosComponent} from './cat-motos/cat-motos.component'
 import {HomeComponent} from './home/home.component'
+import {HttpClientModule} from "@angular/common/http";
 
 
 const routes: Routes = [
@@ -19,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), HttpClientModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
