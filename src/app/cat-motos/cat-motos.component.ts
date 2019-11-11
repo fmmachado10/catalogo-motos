@@ -10,7 +10,7 @@ import {CatMotosService} from "./cat-motos.service";
 export class CatMotosComponent implements OnInit {
 
   listaMotos: Moto[] = [];
-  moto: Moto = {id: 0, modelo: '', ano: '', cor: ''};
+  obj: Moto = {id: 0, modelo: '', ano: '', cor: ''};
   mensagem = '';
 
   constructor(private api: CatMotosService) { }

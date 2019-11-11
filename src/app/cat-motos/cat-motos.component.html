@@ -7,15 +7,15 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inModelo">Modelo</label>
-        <input [(ngModel)]="moto.modelo" type="text" class="form-control" id="inModelo" name="inModelo">
+        <input [(ngModel)]="obj.modelo" type="text" class="form-control" id="inModelo" name="inModelo">
       </div>
       <div class="form-group col-md-3">
         <label for="inAno">Ano</label>
-        <input [(ngModel)]="moto.ano" type="text" class="form-control" id="inAno" name="inAno">
+        <input [(ngModel)]="obj.ano" type="text" class="form-control" id="inAno" name="inAno">
       </div>
       <div class="form-group col-md-3">
         <label for="inCor">Cor</label>
-        <input [(ngModel)]="moto.cor" type="text" class="form-control" id="inCor" name="inCor">
+        <input [(ngModel)]="obj.cor" type="text" class="form-control" id="inCor" name="inCor">
       </div>
     </div>
 
@@ -25,17 +25,35 @@
 
     <p></p>
     <div class="form-row">
-      <div class="col-6" *ngFor="let obj of listaMotos">
+      <div class="col-6" *ngFor="let f of listaMotos">
         <div class="card">
           <div class="card-block">
-            <h5 class="card-title">Id: {{obj.id}}</h5>
-            <h6 class="card-title">Modelo: {{obj.modelo}}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">Modelo: {{obj.ano}}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">Modelo: {{obj.cor}}</h6>
+            <h5 class="card-title">Id: {{f.id}}</h5>
+            <h6 class="card-title">Modelo: {{f.modelo}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Ano: {{f.ano}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Cor: {{f.cor}}</h6>
           </div>
         </div>
       </div>
     </div>
+
+<!--
+    <div class="card">
+      <div class="card-body">
+        <table class="table">
+          <th scope="col"> Código </th>
+          <th scope="col"> Nome </th>
+          <th scope="col"> ... </th>
+          <tr *ngFor="let f of lista">
+            <td>{{f.id}}</td>
+            <td>{{f.modelo}}</td>
+            <td><button type="button" class="btn btn-secondary" (click)="consultar(f)">Carregar</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+-->
+
   </form>
 
 </div>
