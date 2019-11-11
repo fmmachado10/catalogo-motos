@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Moto} from '../modelo/moto';
 import {CatMotosService} from "./cat-motos.service";
+import {MotoService} from "../moto.service";
 
 @Component({
   selector: 'app-cat-motos',
@@ -21,16 +22,16 @@ export class CatMotosComponent implements OnInit {
 
   consultar() {
 
-    console.log("vai chamar a api...")
+      console.log("vai chamar a api...")
 
-    this.api.consultar()
-      .toPromise()
-      .then
-      (res => {
-        this.listaMotos = res;
-      });
+      this.api.consultar()
+        .toPromise()
+        .then
+        (res => {
+          this.listaMotos = res;
+        });
 
-    console.log("saindo da api...")
+      console.log("saindo da api...")
 
   }
 

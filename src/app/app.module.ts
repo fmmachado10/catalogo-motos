@@ -8,6 +8,7 @@ import { CatMotosComponent } from './cat-motos/cat-motos.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { ImagemComponent } from './imagem/imagem.component';
+import {CatMotosService} from "./cat-motos/cat-motos.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { ImagemComponent } from './imagem/imagem.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CatMotosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
