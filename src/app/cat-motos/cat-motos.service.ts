@@ -17,7 +17,7 @@ export class CatMotosService {
   }
 
   consultar(): Observable<Moto[]> {
-    console.log("...service...")
+    console.log("...service consultar...")
     return this.http.get<Moto[]>(url);
 
   }
@@ -28,6 +28,7 @@ export class CatMotosService {
   }
 
   adicionar(Moto): Observable<Moto> {
+    console.log("...service adicionar...")
     return this.http.post<Moto>(url, Moto, httpOptions);
   }
 

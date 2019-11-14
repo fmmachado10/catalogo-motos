@@ -20,7 +20,12 @@
     </div>
 
     <div class="form-row">
-      <button type="button" class="btn btn-success" (click)="adicionar()">Adcionar</button>
+      <button type="button" class="btn btn-success mr-md-2" (click)="adicionar()">Adcionar</button>
+      <button type="button" class="btn btn-warning mr-md-2" (click)="alterar()">Alterar</button>
+      <button type="button" class="btn btn-danger mr-md-2" (click)="excluir()">Excluir</button>
+      <button type="button" class="btn btn-info mr-md-2" (click)="limpar()">Limpar</button>
+
+
     </div>
 
     <p></p>
@@ -28,7 +33,11 @@
       <div class="col-6" *ngFor="let f of listaMotos">
         <div class="card">
           <div class="card-block">
-            <h5 class="card-title">Id: {{f.id}}</h5>
+
+            <h5 class="card-title"> <a class="btn btn-outline-warning btn-sm glyphicon glyphicon-pencil" href="cadastro.html'">  ID: {{f.id}} </a> </h5>
+
+
+
             <h6 class="card-title">Modelo: {{f.modelo}}</h6>
             <h6 class="card-subtitle mb-2 text-muted">Ano: {{f.ano}}</h6>
             <h6 class="card-subtitle mb-2 text-muted">Cor: {{f.cor}}</h6>

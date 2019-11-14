@@ -17,11 +17,12 @@ export class CatMotosComponent implements OnInit {
 
   ngOnInit() {
     this.consultar();
+    this.obj = {id: 0, modelo: '', ano: '', cor: ''};
   }
 
   consultar() {
 
-      console.log("vai chamar a api...")
+      console.log("...consultar...")
 
       this.api.consultar()
         .toPromise()
@@ -30,9 +31,43 @@ export class CatMotosComponent implements OnInit {
           this.listaMotos = res;
         });
 
-      console.log("saindo da api...")
+  }
+
+  adicionar() {
+
+    console.log("...adicionar...")
+
+    this.api.adicionar(this.obj)
+      .toPromise()
+      .then(() => {
+        this.ngOnInit()
+      });
 
   }
+
+  alterar() {
+
+    console.log("...alterar...")
+
+    this.api.alterar(this.obj.id, this.obj)
+      .toPromise()
+      .then(() => {
+        this.ngOnInit()
+      });
+
+
+
+  }
+
+  limpar() {
+
+    console.log("...limpar...")
+
+    this.ngOnInit()
+
+  }
+
+
 
 
 
