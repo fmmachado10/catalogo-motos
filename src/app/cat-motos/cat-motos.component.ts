@@ -12,12 +12,14 @@ export class CatMotosComponent implements OnInit {
   listaMotos: Moto[] = [];
   obj: Moto = {id: 0, modelo: '', ano: '', cor: ''};
   mensagem = '';
+  selecionado: boolean = false;
 
   constructor(private api: CatMotosService) { }
 
   ngOnInit() {
     this.consultar();
     this.obj = {id: 0, modelo: '', ano: '', cor: ''};
+    this.selecionado = false;
   }
 
   consultar() {
@@ -78,6 +80,8 @@ export class CatMotosComponent implements OnInit {
     this.obj.ano = f.ano
     this.obj.cor = f.cor
 
+    this.selecionado = true;
+
   }
 
   limpar() {
@@ -87,5 +91,10 @@ export class CatMotosComponent implements OnInit {
     this.ngOnInit()
 
   }
+
+
+
+
+
 
 }
