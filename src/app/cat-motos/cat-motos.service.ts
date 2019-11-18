@@ -33,6 +33,7 @@ export class CatMotosService {
   }
 
   alterar(id, Moto): Observable<any> {
+    console.log("...service alterar...")
     const urlLocal = `${url}/${id}`;
     return this.http.put(urlLocal, Moto, httpOptions);
   }

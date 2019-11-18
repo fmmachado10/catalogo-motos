@@ -34,9 +34,7 @@
         <div class="card">
           <div class="card-block">
 
-            <h5 class="card-title"> <a class="btn btn-outline-warning btn-sm glyphicon glyphicon-pencil" href="cadastro.html'">  ID: {{f.id}} </a> </h5>
-
-
+            <h5 class="card-title"> <a class="btn btn-outline-warning btn-sm glyphicon glyphicon-pencil" routerLinkActive="active" (click)="selecionar(f)" >  ID: {{f.id}} </a> </h5>
 
             <h6 class="card-title">Modelo: {{f.modelo}}</h6>
             <h6 class="card-subtitle mb-2 text-muted">Ano: {{f.ano}}</h6>

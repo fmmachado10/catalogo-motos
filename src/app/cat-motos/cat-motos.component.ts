@@ -55,7 +55,28 @@ export class CatMotosComponent implements OnInit {
         this.ngOnInit()
       });
 
+  }
 
+  excluir() {
+
+    console.log("...excluir...")
+
+    this.api.excluir(this.obj.id)
+      .toPromise()
+      .then(() => {
+        this.ngOnInit()
+      });
+
+  }
+
+  selecionar(f: Moto) {
+
+    console.log("...limpar...")
+
+    this.obj.id = f.id
+    this.obj.modelo = f.modelo
+    this.obj.ano = f.ano
+    this.obj.cor = f.cor
 
   }
 
@@ -66,12 +87,5 @@ export class CatMotosComponent implements OnInit {
     this.ngOnInit()
 
   }
-
-
-
-
-
-
-
 
 }
