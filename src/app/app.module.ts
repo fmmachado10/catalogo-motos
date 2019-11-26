@@ -8,7 +8,8 @@ import { CatMotosComponent } from './cat-motos/cat-motos.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { ImagemComponent } from './imagem/imagem.component';
-import {CatMotosService} from "./cat-motos/cat-motos.service";
+import {CatMotosService} from './cat-motos/cat-motos.service';
+import { CatRacaComponent } from './cat-raca/cat-raca.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {CatMotosService} from "./cat-motos/cat-motos.service";
     CatMotosComponent,
     HomeComponent,
     MenuComponent,
-    ImagemComponent
+    ImagemComponent,
+    CatRacaComponent
 
 
   ],
