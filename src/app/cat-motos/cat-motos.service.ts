@@ -17,30 +17,39 @@ export class CatMotosService {
   }
 
   consultar(): Observable<Moto[]> {
+
     console.log("...service consultar...")
     return this.http.get<Moto[]>(url);
 
   }
 
   consultarPorId(id: number): Observable<Moto> {
+
     const urlLocal = `${url}/${id}`;
     return this.http.get<Moto>(urlLocal);
+
   }
 
   adicionar(Moto): Observable<Moto> {
+
     console.log("...service adicionar...")
     return this.http.post<Moto>(url, Moto, httpOptions);
+
   }
 
   alterar(id, Moto): Observable<any> {
+
     console.log("...service alterar...")
     const urlLocal = `${url}/${id}`;
     return this.http.put(urlLocal, Moto, httpOptions);
+
   }
 
   excluir(id): Observable<Moto> {
+
     const urlLocal = `${url}/${id}`;
     return this.http.delete<Moto>(urlLocal, httpOptions);
+
   }
 
 

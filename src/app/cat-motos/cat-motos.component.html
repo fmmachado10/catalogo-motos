@@ -1,22 +1,47 @@
 <div class="container">
 
+  <app-alert [alerta]="mensagem"  [ehVisivel]="ehVisivel" ></app-alert>
+
   <h4 class="text-info">Catálogo de Motos</h4>
 
-  <form>
+  <form  >
 
-    <div class="form-row">
-      <div class="form-group col-md-6">
+    <div class="form-row" [formGroup]="formMotos">
+
+      <div class="form-group col-md-6"  >
         <label for="inModelo">Modelo</label>
-        <input [(ngModel)]="obj.modelo" type="text" class="form-control" id="inModelo" name="inModelo">
+        <input [(ngModel)]="obj.modelo" type="text" class="form-control" id="inModelo" name="inModelo" formControlName="modelo">
+
+        <!-- <div *ngIf="formMotos.get('modelo').invalid && (formMotos.get('modelo').dirty || formMotos.get('modelo').touched)" class="alert alert-danger"> O modelo é obrigatórioxxx </div> -->
+
+        <app-error-msg text="O campo Modelo deve ser preenchido." *ngIf="formMotos.get('modelo').invalid && (formMotos.get('modelo').dirty || formMotos.get('modelo').touched)" ></app-error-msg>
+        <app-error-msg text="O campo Modelo deve ser maior que 5 caracteres." *ngIf="formMotos.get('modelo').hasError('minlength')"></app-error-msg>
+        <app-error-msg text="O campo Modelo deve ser menor que 30 caracteres." *ngIf="formMotos.get('modelo').hasError('maxLength')"></app-error-msg>
+
       </div>
-      <div class="form-group col-md-3">
+
+
+      <div class="form-group col-md-3" >
         <label for="inAno">Ano</label>
-        <input [(ngModel)]="obj.ano" type="text" class="form-control" id="inAno" name="inAno">
+        <input [(ngModel)]="obj.ano" type="text" class="form-control" id="inAno" name="inAno" formControlName="ano">
+
+        <!--<div *ngIf="formMotos.get('ano').invalid && (formMotos.get('ano').dirty || formMotos.get('ano').touched)" class="alert alert-danger"> O Ano é obrigatórioyyy </div>-->
+
+        <app-error-msg text="O campo Ano deve ser preenchido." *ngIf="formMotos.get('ano').invalid && (formMotos.get('ano').dirty || formMotos.get('ano').touched)" ></app-error-msg>
+
       </div>
+
+
       <div class="form-group col-md-3">
         <label for="inCor">Cor</label>
-        <input [(ngModel)]="obj.cor" type="text" class="form-control" id="inCor" name="inCor">
+        <input [(ngModel)]="obj.cor" type="text" class="form-control" id="inCor" name="inCor" formControlName="cor">
+
+        <!-- <div *ngIf="formMotos.get('cor').invalid && (formMotos.get('cor').dirty || formMotos.get('cor').touched)" class="alert alert-danger"> A Cor é obrigatóriozzz </div> -->
+
+        <app-error-msg text="O campo Cor deve ser preenchido." *ngIf="formMotos.get('cor').invalid && (formMotos.get('cor').dirty || formMotos.get('cor').touched)" ></app-error-msg>
+
       </div>
+
     </div>
 
     <div class="form-row">
