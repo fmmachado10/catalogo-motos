@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Moto} from '../modelo/moto';
 import {CatMotosService} from "./cat-motos.service";
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {AlertType} from "../alert/alert";
 
 @Component({
   selector: 'app-cat-motos',
@@ -14,6 +15,7 @@ export class CatMotosComponent implements OnInit {
   obj: Moto = {id: 0, modelo: '', ano: '', cor: ''};
   mensagem: string = '';
   ehVisivel: boolean = false;
+  alertType: AlertType =  AlertType.INFO;
   selecionado: boolean = false;
 
   formMotos: FormGroup;
@@ -67,6 +69,8 @@ export class CatMotosComponent implements OnInit {
 
       console.log('formulario invalido');
       this.verificaValidacoesForm(this.formMotos);
+      this.ehVisivel = false;
+
 
     } else {
 
@@ -75,6 +79,11 @@ export class CatMotosComponent implements OnInit {
         .then(() => {
           this.ngOnInit()
         });
+
+      console.log("Moto adicionada com sucesso.")
+      this.mensagem = "Moto adicionada com sucesso"
+      this.ehVisivel = true;
+      this.alertType = AlertType.SUCCESS;
 
     }
 
@@ -89,6 +98,7 @@ export class CatMotosComponent implements OnInit {
       console.log("É necessário selecionar um item para alterar.")
       this.mensagem = "É necessário selecionar um item para alterar."
       this.ehVisivel = true;
+      this.alertType = AlertType.DANGER;
 
     } else {
 
@@ -111,6 +121,7 @@ export class CatMotosComponent implements OnInit {
       console.log("É necessário selecionar um item para excluir.")
       this.mensagem = "É necessário selecionar um item para excluir."
       this.ehVisivel = true;
+      this.alertType = AlertType.DANGER;
 
 
     } else {
