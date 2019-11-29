@@ -67,8 +67,8 @@ export class CatMotosComponent implements OnInit {
 
     if (!this.formMotos.valid) {
 
-      console.log('formulario invalido');
-      this.verificaValidacoesForm(this.formMotos);
+      console.log('Formulario invalido');
+      this.verificaValidacoesForm(this.formMotos)
       this.ehVisivel = false;
 
 
@@ -83,7 +83,7 @@ export class CatMotosComponent implements OnInit {
       console.log("Moto adicionada com sucesso.")
       this.mensagem = "Moto adicionada com sucesso"
       this.ehVisivel = true;
-      this.alertType = AlertType.SUCCESS;
+      this.alertType = AlertType.SUCCESS
 
     }
 
