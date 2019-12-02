@@ -77,13 +77,17 @@ export class CatMotosComponent implements OnInit {
       this.api.adicionar(this.obj)
         .toPromise()
         .then(() => {
+
+          console.log("Moto adicionada com sucesso.")
+          this.mensagem = "Moto adicionada com sucesso"
+          this.ehVisivel = true;
+          this.alertType = AlertType.SUCCESS
+
           this.ngOnInit()
+
         });
 
-      console.log("Moto adicionada com sucesso.")
-      this.mensagem = "Moto adicionada com sucesso"
-      this.ehVisivel = true;
-      this.alertType = AlertType.SUCCESS
+
 
     }
 
