@@ -11,6 +11,7 @@ import {ImagemComponent} from './imagem/imagem.component';
 import {CatMotosService} from "./cat-motos/cat-motos.service";
 import { ErrorMsgComponent } from './error-msg/error-msg.component';
 import { AlertComponent } from './alert/alert.component';
+import { TestesAngularComponent } from './testes-angular/testes-angular.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AlertComponent } from './alert/alert.component';
     MenuComponent,
     ImagemComponent,
     ErrorMsgComponent,
-    AlertComponent
+    AlertComponent,
+    TestesAngularComponent
 
 
   ],
