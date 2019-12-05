@@ -12,6 +12,7 @@ import {CatMotosService} from "./cat-motos/cat-motos.service";
 import { ErrorMsgComponent } from './error-msg/error-msg.component';
 import { AlertComponent } from './alert/alert.component';
 import { TestesAngularComponent } from './testes-angular/testes-angular.component';
+import { OutputPropertyComponent } from './output-property/output-property.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TestesAngularComponent } from './testes-angular/testes-angular.componen
     ImagemComponent,
     ErrorMsgComponent,
     AlertComponent,
-    TestesAngularComponent
+    TestesAngularComponent,
+    OutputPropertyComponent
 
 
   ],
