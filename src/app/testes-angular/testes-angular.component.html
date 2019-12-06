@@ -1,0 +1,66 @@
+<div class="container">
+
+  <h4 class="text-info">Testes Angular</h4>
+
+  <div>
+    <h5 class="">1 - Two-way data binding (Banana in Box)</h5>
+    <h6>É a passagem do Template para o componente e vice versa<br>
+      Tanto o Template quanto o componente são atualizados ao mesmo tempo.
+
+    </h6>
+
+    <input
+      type="text"
+      [value]="nome"
+      (input)="nome = $event.target.value"
+    >
+
+    <input
+      type="text"
+      [ngModel]="nome"
+      (ngModelChange)="nome = $event"
+    >
+
+    <input
+      type="text"
+      [(ngModel)]="nome"
+    >
+
+
+    <p>Você digitou: {{ nome }}</p>
+
+    <br>
+
+    <p>Meu nome é {{ pessoa. nome }} e minha idade é {{ pessoa.idade }} anos.</p>
+    <input
+      type="text"
+      [(ngModel)]="pessoa.nome"
+    >
+    <input
+      type="text"
+      [(ngModel)]="pessoa.idade"
+    >
+    <br><br>
+  </div>
+
+  <div>
+
+    <h5 class="">2 - Output Properties </h5>
+    <h6>Criando um contador</h6>
+
+    <app-output-property [valor]="valorInicial" (mudouValor)="onMudouValor($event)"></app-output-property>
+
+  </div>
+
+
+  <div>
+    <br>
+
+    <h5 class="">3 - Acesso ao DOM e ao Template com ViewChild </h5>
+    <h6>Acessar a variável do Template</h6>
+
+    <app-output-property [valor]="valorInicial" (mudouValor)="onMudouValor($event)" #variavelTemplate ></app-output-property>
+
+  </div>
+
+</div>
