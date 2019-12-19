@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  urlImagem = 'http://lorempixel.com/400/200/nature/'
+  urlImagem = 'http://lorempixel.com/400/200/nature/';
 
   constructor() { }
 

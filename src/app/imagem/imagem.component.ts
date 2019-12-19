@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ImagemComponent implements OnInit {
 
-  @Input() caminho : string = ''
+  @Input() caminho: string = '';
 
   constructor() { }
 

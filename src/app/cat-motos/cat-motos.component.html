@@ -55,11 +55,11 @@
 
     <p></p>
     <div class="form-row">
-      <div class="col-6" *ngFor="let f of listaMotos">
+      <div class="col-6" *ngFor="let f of listaMotos | orderBy: listaMotos: 'id'    ">
         <div class="card">
           <div class="card-block">
 
-            <h5 class="card-title"> <a class="btn btn-outline-warning btn-sm glyphicon glyphicon-pencil" routerLinkActive="active" (click)="selecionar(f)" >  ID: {{f.id}} </a> </h5>
+            <h5 class="card-title"> <a class="btn btn-outline-warning btn-sm glyphicon glyphicon-pencil" routerLinkActive="active" (click)="selecionar(f)" style="cursor: pointer" >  ID: {{f.id}} </a> </h5>
 
             <h6 class="card-title">Modelo: {{f.modelo}}</h6>
             <h6 class="card-subtitle mb-2 text-muted">Ano: {{f.ano}}</h6>
@@ -68,23 +68,6 @@
         </div>
       </div>
     </div>
-
-<!--
-    <div class="card">
-      <div class="card-body">
-        <table class="table">
-          <th scope="col"> Código </th>
-          <th scope="col"> Nome </th>
-          <th scope="col"> ... </th>
-          <tr *ngFor="let f of lista">
-            <td>{{f.id}}</td>
-            <td>{{f.modelo}}</td>
-            <td><button type="button" class="btn btn-secondary" (click)="consultar(f)">Carregar</button></td>
-          </tr>
-        </table>
-      </div>
-    </div>
--->
 
   </form>
 

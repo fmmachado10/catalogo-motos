@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AlertType} from "./alert";
+import {AlertType} from './alert';
 
 @Component({
   selector: 'app-alert',
@@ -8,7 +8,7 @@ import {AlertType} from "./alert";
 })
 export class AlertComponent implements OnInit {
 
-  @Input() alerta: string = "";
+  @Input() alerta: string = '';
   @Input() ehVisivel: boolean = true;
   @Input() alertType: AlertType;
 

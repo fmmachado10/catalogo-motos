@@ -1,7 +1,7 @@
 export class Raca {
 
   id: number;
-  descricao: String;
+  descricao: string;
 
 
 }

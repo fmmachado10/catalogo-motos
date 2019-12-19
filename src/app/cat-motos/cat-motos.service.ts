@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Moto} from "../modelo/moto";
-import {Observable} from "rxjs/internal/Observable";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Moto} from '../modelo/moto';
+import {Observable} from 'rxjs/internal/Observable';
 
 const url = 'http://localhost:8080/motos';
 const httpOptions = {
@@ -18,7 +18,7 @@ export class CatMotosService {
 
   consultar(): Observable<Moto[]> {
 
-    console.log("...service consultar...")
+    console.log('...service consultar...');
     return this.http.get<Moto[]>(url);
 
   }
@@ -32,14 +32,14 @@ export class CatMotosService {
 
   adicionar(Moto): Observable<Moto> {
 
-    console.log("...service adicionar...")
+    console.log('...service adicionar...');
     return this.http.post<Moto>(url, Moto, httpOptions);
 
   }
 
   alterar(id, Moto): Observable<any> {
 
-    console.log("...service alterar...")
+    console.log('...service alterar...');
     const urlLocal = `${url}/${id}`;
     return this.http.put(urlLocal, Moto, httpOptions);
 

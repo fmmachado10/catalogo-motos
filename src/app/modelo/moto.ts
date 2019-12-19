@@ -1,8 +1,8 @@
 export class Moto {
 
     id: number;
-    modelo: String;
-    ano: String;
-    cor: String;
+    modelo: string;
+    ano: string;
+    cor: string;
 
 }

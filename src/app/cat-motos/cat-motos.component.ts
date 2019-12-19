@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Moto} from '../modelo/moto';
-import {CatMotosService} from "./cat-motos.service";
-import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {AlertType} from "../alert/alert";
+import {CatMotosService} from './cat-motos.service';
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {AlertType} from '../alert/alert';
 
 @Component({
   selector: 'app-cat-motos',
@@ -37,12 +37,13 @@ export class CatMotosComponent implements OnInit {
 
   consultar() {
 
-      console.log("...consultar...")
+      console.log('...consultar...');
 
       this.api.consultar()
         .toPromise()
         .then
         (res => {
+
           this.listaMotos = res;
         });
 
@@ -63,12 +64,12 @@ export class CatMotosComponent implements OnInit {
 
   adicionar() {
 
-    console.log("...adicionar...")
+    console.log('...adicionar...');
 
     if (!this.formMotos.valid) {
 
       console.log('Formulario invalido');
-      this.verificaValidacoesForm(this.formMotos)
+      this.verificaValidacoesForm(this.formMotos);
       this.ehVisivel = false;
 
 
@@ -78,12 +79,12 @@ export class CatMotosComponent implements OnInit {
         .toPromise()
         .then(() => {
 
-          console.log("Moto adicionada com sucesso.")
-          this.mensagem = "Moto adicionada com sucesso"
+          console.log('Moto adicionada com sucesso.');
+          this.mensagem = 'Moto adicionada com sucesso';
           this.ehVisivel = true;
-          this.alertType = AlertType.SUCCESS
+          this.alertType = AlertType.SUCCESS;
 
-          this.ngOnInit()
+          this.ngOnInit();
 
         });
 
@@ -95,12 +96,12 @@ export class CatMotosComponent implements OnInit {
 
   alterar() {
 
-    console.log("...alterar...")
+    console.log('...alterar...');
 
     if (!this.selecionado) {
 
-      console.log("É necessário selecionar um item para alterar.")
-      this.mensagem = "É necessário selecionar um item para alterar."
+      console.log('É necessário selecionar um item para alterar.');
+      this.mensagem = 'É necessário selecionar um item para alterar.';
       this.ehVisivel = true;
       this.alertType = AlertType.DANGER;
 
@@ -109,7 +110,7 @@ export class CatMotosComponent implements OnInit {
       this.api.alterar(this.obj.id, this.obj)
         .toPromise()
         .then(() => {
-          this.ngOnInit()
+          this.ngOnInit();
         });
 
     }
@@ -118,12 +119,12 @@ export class CatMotosComponent implements OnInit {
 
   excluir() {
 
-    console.log("...excluir...")
+    console.log('...excluir...');
 
     if (!this.selecionado) {
 
-      console.log("É necessário selecionar um item para excluir.")
-      this.mensagem = "É necessário selecionar um item para excluir."
+      console.log('É necessário selecionar um item para excluir.');
+      this.mensagem = 'É necessário selecionar um item para excluir.';
       this.ehVisivel = true;
       this.alertType = AlertType.DANGER;
 
@@ -133,7 +134,7 @@ export class CatMotosComponent implements OnInit {
       this.api.excluir(this.obj.id)
         .toPromise()
         .then(() => {
-          this.ngOnInit()
+          this.ngOnInit();
         });
 
     }
@@ -142,12 +143,12 @@ export class CatMotosComponent implements OnInit {
 
   selecionar(f: Moto) {
 
-    console.log("...selecionar...")
+    console.log('...selecionar...');
 
-    this.obj.id = f.id
-    this.obj.modelo = f.modelo
-    this.obj.ano = f.ano
-    this.obj.cor = f.cor
+    this.obj.id = f.id;
+    this.obj.modelo = f.modelo;
+    this.obj.ano = f.ano;
+    this.obj.cor = f.cor;
 
     this.selecionado = true;
 
@@ -155,12 +156,12 @@ export class CatMotosComponent implements OnInit {
 
   limpar() {
 
-    console.log("...limpar...")
+    console.log('...limpar...');
 
-    this.mensagem = ''
-    this.ehVisivel = false
+    this.mensagem = '';
+    this.ehVisivel = false;
 
-    this.ngOnInit()
+    this.ngOnInit();
 
   }
 

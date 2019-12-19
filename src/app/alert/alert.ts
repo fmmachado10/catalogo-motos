@@ -6,8 +6,8 @@ export class Alert {
 }
 
 export enum AlertType {
-    SUCCESS = "alert alert-success",
-    WARNING = "alert alert-warning",
-    DANGER = "alert alert-danger",
-    INFO = "alert alert-info"
+    SUCCESS = 'alert alert-success',
+    WARNING = 'alert alert-warning',
+    DANGER = 'alert alert-danger',
+    INFO = 'alert alert-info'
 }

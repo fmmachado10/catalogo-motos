@@ -13,11 +13,11 @@ export class TestesAngularComponent implements OnInit {
   pessoa: any = {
     nome: 'XXX',
     idade: 20
-  }
+  };
 
   valorInicial = 15;
 
-  onMudouValor(evento){
+  onMudouValor(evento) {
 
   console.log(evento.novoValor);
 
