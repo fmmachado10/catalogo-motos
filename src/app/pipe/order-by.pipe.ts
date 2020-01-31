@@ -12,16 +12,16 @@ export class OrderByPipe implements PipeTransform {
 
     console.log('array =>' + array[0]);
 
-    if(!array) {
+    if (!array) {
 
-      console.log('01')
+      console.log('01');
 
     } else {
 
       console.log('posição 0: ' + array);
       this.arrayOrdenado = array.sort();
 
-      console.log('02')
+      console.log('02');
 
     }
 

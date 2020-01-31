@@ -16,6 +16,9 @@ import {OutputPropertyComponent} from './output-property/output-property.compone
 import { CamelCasePipe } from './pipe/camel-case.pipe';
 import { OrderByPipe } from './pipe/order-by.pipe';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +39,8 @@ import { OrderByPipe } from './pipe/order-by.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [CatMotosService],
   bootstrap: [AppComponent]
